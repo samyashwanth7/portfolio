@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sampath Kumar | Creative Technologist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@700&family=Manrope:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+    <style>
+      :root {
+        --bg: #050505;
+        --fg: #e0e0e0;
+        --accent: #ccff00; /* Acid Green for Brutal Vibe */
+        --accent-glow: rgba(204, 255, 0, 0.4);
+        --secondary: #7b61ff;
+        --easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+        --border: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        cursor: none;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--fg);
+        font-family: "Space Grotesk", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* --- GRAIN OVERLAY --- */
+      .noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.07;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* --- CURSOR --- */
+      #cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: var(--accent);
+        border-radius: 50%;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.3s var(--easing),
+          height 0.3s var(--easing);
+      }
+      #cursor.magnet {
+        width: 80px;
+        height: 80px;
+        background: transparent;
+        border: 1px solid var(--accent);
+      }
+
+      /* --- 3D FLOATING NAV --- */
+      .brutal-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 3rem 4vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        transition: all 0.7s var(--easing);
+        mix-blend-mode: exclusion;
+      }
+      .brutal-nav.scrolled {
+        top: 1.5rem;
+        padding: 0.8rem 2rem;
+        width: auto;
+        min-width: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        mix-blend-mode: normal;
+      }
+
+      .nav-logo {
+        font-family: "Syncopate", sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+      }
+      .nav-link {
+        position: relative;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px;
+      }
+      .nav-link::before {
+        content: ">";
+        position: absolute;
+        left: -10px;
+        opacity: 0;
+        transition: 0.2s;
+        color: var(--accent);
+      }
+      .nav-link:hover::before {
+        opacity: 1;
+        left: 0;
+      }
+      .nav-link:hover {
+        padding-left: 15px;
+        color: var(--accent);
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+      }
+      .hero h1 {
+        font-family: "Syncopate", sans-serif;
+        font-size: 13vw;
+        line-height: 0.8;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--fg);
+        position: relative;
+        z-index: 10;
+      }
+      .hero h1:hover {
+        -webkit-text-stroke: 2px var(--accent);
+      }
+
+      /* Tape Scroll */
+      .tape-wrapper {
+        position: absolute;
+        bottom: 10vh;
+        width: 120%;
+        left: -10%;
+        background: var(--accent);
+        color: #000;
+        transform: rotate(-2deg);
+        padding: 10px 0;
+        border-top: 3px solid #000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .tape-text {
+        font-family: "Syncopate";
+        font-size: 1.5rem;
+        font-weight: 800;
+        white-space: nowrap;
+        animation: tapeScroll 20s linear infinite;
+      }
+      @keyframes tapeScroll {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* --- CONTENT WRAPPER (SKEW TARGET) --- */
+      #scroll-content {
+        will-change: transform;
+        transform-origin: center top;
+      }
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 4vw;
+      }
+      section {
+        padding: 15vh 0;
+      }
+
+      .section-header {
+        font-family: "Syncopate";
+        font-size: 3rem;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      /* --- ARSENAL (Skills) --- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .skill-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        padding: 3rem;
+        transition: 0.4s;
+        position: relative;
+        overflow: hidden;
+      }
+      .skill-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .icon-box {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+      }
+      .skill-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-family: "Syncopate";
+        font-weight: 700;
+      }
+      .skill-desc {
+        color: #888;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .tech-pill {
+        display: inline-block;
+        font-size: 0.8rem;
+        border: 1px solid var(--border);
+        padding: 5px 15px;
+        border-radius: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .skill-card:hover .tech-pill {
+        background: var(--accent);
+        color: black;
+        border-color: var(--accent);
+      }
+
+      /* --- WORK LIST --- */
+      .work-item {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        padding: 5rem 0;
+        border-top: 1px solid var(--border);
+        transition: 0.4s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .work-item:last-child {
+        border-bottom: 1px solid var(--border);
+      }
+      .work-item:hover {
+        padding: 5rem 2vw;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .work-title {
+        font-size: 5vw;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 1;
+        transition: 0.3s;
+      }
+      .work-item:hover .work-title {
+        color: var(--accent);
+        -webkit-text-stroke: 1px var(--accent);
+      }
+      .work-tags {
+        font-family: "Manrope";
+        color: #666;
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+      .work-year {
+        font-family: "Syncopate";
+        border: 1px solid var(--border);
+        padding: 5px 15px;
+        border-radius: 50px;
+      }
+
+      /* --- CONTACT FORM --- */
+      .contact-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0;
+        font-size: 1.5rem;
+        color: white;
+        outline: none;
+        transition: 0.3s;
+        font-family: "Space Grotesk";
+      }
+      .input-group input:focus,
+      .input-group textarea:focus {
+        border-bottom-color: var(--accent);
+      }
+      button[type="submit"] {
+        margin-top: 2rem;
+        padding: 1.5rem 4rem;
+        background: var(--accent);
+        color: black;
+        border: none;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        transition: 0.3s;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%);
+      }
+      button[type="submit"]:hover {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 0px #fff;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 18vw;
+        }
+        .skills-grid,
+        .contact-section {
+          grid-template-columns: 1fr;
+        }
+        .brutal-nav {
+          display: none;
+        } /* Hide complicated nav on mobile for simplicity */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div id="cursor"></div>
+
+    <nav class="brutal-nav">
+      <a href="#" class="nav-logo magnetic" data-text="SAMPATH">SAMPATH</a>
+      <ul class="nav-menu">
+        <li>
+          <a href="#work" class="nav-link magnetic" data-text="PROJECTS"
+            >PROJECTS</a
+          >
+        </li>
+        <li>
+          <a href="#about" class="nav-link magnetic" data-text="ARSENAL"
+            >ARSENAL</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="nav-link magnetic" data-text="CONTACT"
+            >CONTACT</a
+          >
+        </li>
+      </ul>
+      <div class="magnetic">
+        <button
+          class="nav-link"
+          style="
+            background: var(--accent);
+            color: black;
+            border: none;
+            font-weight: 700;
+          "
+        >
+          HIRE ME
+        </button>
+      </div>
+    </nav>
+
+    <div id="scroll-content">
+      <section class="hero">
+        <h1>
+          <div>SAMPATH</div>
+          <div>KUMAR</div>
+        </h1>
+
+        <div class="tape-wrapper">
+          <div class="tape-text">
+            CREATIVE TECHNOLOGIST ✦ MERN STACK ✦ CLOUD ARCHITECT ✦ SYSTEM DESIGN
+            ✦ CREATIVE TECHNOLOGIST ✦ MERN STACK ✦
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <section id="about">
+          <div class="section-header">
+            <span>Technical<br />Arsenal</span>
+            <span style="font-size: 1rem; font-family: &quot;Manrope&quot;"
+              >01 // SKILLS</span
+            >
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card magnetic">
+              <div class="icon-box"><i class="ri-code-s-slash-fill"></i></div>
+              <h3 class="skill-title">Frontend</h3>
+              <p class="skill-desc">
+                Building physics-based, immersive web experiences that defy
+                standard layouts.
+              </p>
+              <div>
+                <span class="tech-pill">React</span
+                ><span class="tech-pill">GSAP</span
+                ><span class="tech-pill">Three.js</span>
+              </div>
+            </div>
+            <div class="skill-card magnetic">
+              <div class="icon-box"><i class="ri-server-fill"></i></div>
+              <h3 class="skill-title">Backend</h3>
+              <p class="skill-desc">
+                Architecting secure, scalable systems with heavy data integrity.
+              </p>
+              <div>
+                <span class="tech-pill">Node.js</span
+                ><span class="tech-pill">MongoDB</span
+                ><span class="tech-pill">Express</span>
+              </div>
+            </div>
+            <div class="skill-card magnetic">
+              <div class="icon-box"><i class="ri-shield-keyhole-fill"></i></div>
+              <h3 class="skill-title">Security</h3>
+              <p class="skill-desc">
+                AWS Certified Architect. Implementing forensic security and
+                encryption.
+              </p>
+              <div>
+                <span class="tech-pill">AWS</span
+                ><span class="tech-pill">Cryptography</span>
+              </div>
+            </div>
+            <div class="skill-card magnetic">
+              <div class="icon-box"><i class="ri-brush-fill"></i></div>
+              <h3 class="skill-title">Design</h3>
+              <p class="skill-desc">
+                Translating complex logic into brutalist, high-impact
+                interfaces.
+              </p>
+              <div>
+                <span class="tech-pill">Figma</span
+                ><span class="tech-pill">Motion</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="work">
+          <div class="section-header">
+            <span>Selected<br />Works</span>
+            <span style="font-size: 1rem; font-family: &quot;Manrope&quot;"
+              >02 // DEPLOYMENTS</span
+            >
+          </div>
+
+          <div class="work-list">
+            <a href="project.html" class="work-item magnetic">
+              <div>
+                <h2 class="work-title">Steganography</h2>
+                <div class="work-tags">Security / Encryption / React</div>
+              </div>
+              <div class="work-year">2026</div>
+            </a>
+            <a href="project.html" class="work-item magnetic">
+              <div>
+                <h2 class="work-title">AI Interviewer</h2>
+                <div class="work-tags">OpenAI / Voice Synth</div>
+              </div>
+              <div class="work-year">2025</div>
+            </a>
+            <a href="project.html" class="work-item magnetic">
+              <div>
+                <h2 class="work-title">CineScope</h2>
+                <div class="work-tags">API / UI Engineering</div>
+              </div>
+              <div class="work-year">2025</div>
+            </a>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="section-header">
+            <span>Initiate<br />Protocol</span>
+            <span style="font-size: 1rem; font-family: &quot;Manrope&quot;"
+              >03 // CONTACT</span
+            >
+          </div>
+
+          <div class="contact-section">
+            <div>
+              <p class="big-text" style="font-size: 2rem; color: #888">
+                Ready to build something that breaks the internet? Drop a
+                signal.
+              </p>
+              <br />
+              <a
+                href="mailto:pillasampathkumar@gmail.com"
+                style="font-size: 1.5rem; color: var(--accent)"
+                >pillasampathkumar@gmail.com</a
+              >
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input
+                type="hidden"
+                name="access_key"
+                value="YOUR_ACCESS_KEY_HERE"
+              />
+              <div style="margin-bottom: 2rem" class="input-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="IDENTIFIER (NAME)"
+                  required
+                />
+              </div>
+              <div style="margin-bottom: 2rem" class="input-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="CONTACT FREQUENCY (EMAIL)"
+                  required
+                />
+              </div>
+              <div style="margin-bottom: 2rem" class="input-group">
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="TRANSMISSION DATA (MESSAGE)"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="magnetic">TRANSMIT DATA</button>
+            </form>
+          </div>
+        </section>
+
+        <footer
+          style="
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: #666;
+          "
+        >
+          SAMPATH KUMAR © 2026 // SYSTEM ONLINE
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // --- 1. MAGNET CURSOR LOGIC ---
+      const cursor = document.getElementById("cursor");
+      const magnetics = document.querySelectorAll(".magnetic");
+
+      document.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.1,
+          ease: "power2.out",
+        });
+      });
+
+      magnetics.forEach((el) => {
+        el.addEventListener("mouseenter", () => cursor.classList.add("magnet"));
+        el.addEventListener("mouseleave", () =>
+          cursor.classList.remove("magnet"),
+        );
+      });
+
+      // --- 2. SCROLL SKEW EFFECT (The "Brutal" Feel) ---
+      const content = document.getElementById("scroll-content");
+      let currentScroll = 0;
+      let skew = 0;
+
+      // Use Lenis for smooth scroll, then hook into it for skew
+      const lenis = new Lenis({ duration: 1.2, smooth: true });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      lenis.on("scroll", (e) => {
+        // Calculate velocity-based skew
+        let velocity = e.velocity;
+        skew = velocity * 0.15; // Intensity
+        // Clamp skew
+        if (skew > 7) skew = 7;
+        if (skew < -7) skew = -7;
+
+        gsap.to(content, { skewY: skew, duration: 0.5, ease: "power2.out" });
+      });
+
+      // --- 3. 3D NAV TILT ---
+      const nav = document.querySelector(".brutal-nav");
+      let isScrolled = false;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          if (!isScrolled) {
+            nav.classList.add("scrolled");
+            isScrolled = true;
+          }
+        } else {
+          if (isScrolled) {
+            nav.classList.remove("scrolled");
+            nav.style.transform = "";
+            isScrolled = false;
+          }
+        }
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isScrolled) return;
+        const x = (e.clientX / window.innerWidth - 0.5) * 20; // Tilt amount
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        gsap.to(nav, {
+          rotationY: x,
+          rotationX: -y,
+          transformPerspective: 1000,
+          duration: 0.5,
+        });
+      });
+
+      // --- 4. HACKER TEXT EFFECT ---
+      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      document.querySelectorAll("[data-text]").forEach((item) => {
+        item.addEventListener("mouseenter", (event) => {
+          let iteration = 0;
+          const original = event.target.dataset.text;
+          clearInterval(event.target.interval);
+
+          event.target.interval = setInterval(() => {
+            event.target.innerText = original
+              .split("")
+              .map((l, i) => {
+                if (i < iteration) return original[i];
+                return letters[Math.floor(Math.random() * 26)];
+              })
+              .join("");
+            if (iteration >= original.length)
+              clearInterval(event.target.interval);
+            iteration += 1 / 3;
+          }, 30);
+        });
+      });
+    </script>
+  </body>
+</html>
