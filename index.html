@@ -799,21 +799,36 @@
           </div>
 
           <div class="work-list">
-            <a href="project.html" class="work-item magnetic">
+            <a
+              href="https://github.com/Yaswanth-Varma-Sangaraju/CMR_STENO_TEMP"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-item magnetic"
+            >
               <div>
                 <h2 class="work-title">Steganography</h2>
                 <div class="work-tags">Security / Encryption / React</div>
               </div>
               <div class="work-year">2026</div>
             </a>
-            <a href="project.html" class="work-item magnetic">
+            <a
+              href="https://github.com/samyashwanth7/career-prep-ai-pilot"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-item magnetic"
+            >
               <div>
                 <h2 class="work-title">AI Interviewer</h2>
                 <div class="work-tags">OpenAI / Voice Synth</div>
               </div>
               <div class="work-year">2025</div>
             </a>
-            <a href="project.html" class="work-item magnetic">
+            <a
+              href="https://github.com/samyashwanth7/my-movies-app_jsm"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-item magnetic"
+            >
               <div>
                 <h2 class="work-title">CineScope</h2>
                 <div class="work-tags">API / UI Engineering</div>
@@ -919,6 +934,7 @@
                   href="https://github.com/samyashwanth7"
                   class="social-icon magnetic"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
                   <i class="ri-github-fill"></i>
@@ -927,6 +943,7 @@
                   href="https://www.linkedin.com/in/sampath-kumar-pilla-93ba52291/"
                   class="social-icon magnetic"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
                   <i class="ri-linkedin-box-fill"></i>
@@ -935,6 +952,7 @@
                   href="https://www.instagram.com/samyashwanth7/"
                   class="social-icon magnetic"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
                   <i class="ri-instagram-line"></i>
@@ -1118,6 +1136,7 @@
       });
 
       // --- PAGE TRANSITION (CURTAIN) ---
+      // Modified to skip transition for external links
       function transitionToPage(href) {
         gsap.to(".transition-curtain", {
           scaleY: 1,
@@ -1129,13 +1148,12 @@
         });
       }
       document.querySelectorAll("a").forEach((link) => {
-        if (
-          link.getAttribute("href") &&
-          link.getAttribute("href").includes(".html")
-        ) {
+        const href = link.getAttribute("href");
+        // Only apply curtain transition to internal HTML links
+        if (href && href.includes(".html") && !href.startsWith("http")) {
           link.addEventListener("click", (e) => {
             e.preventDefault();
-            transitionToPage(link.getAttribute("href"));
+            transitionToPage(href);
           });
         }
       });
