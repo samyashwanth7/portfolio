@@ -263,7 +263,10 @@
         z-index: 60;
         pointer-events: auto;
         cursor: pointer;
-        transition: background 250ms ease, border-color 250ms ease, color 250ms ease;
+        transition:
+          background 250ms ease,
+          border-color 250ms ease,
+          color 250ms ease;
       }
 
       .audio-indicator:hover {
@@ -278,7 +281,9 @@
         border-radius: 50%;
         background: #555;
         box-shadow: none;
-        transition: background 300ms ease, box-shadow 300ms ease;
+        transition:
+          background 300ms ease,
+          box-shadow 300ms ease;
       }
 
       .audio-indicator.playing .audio-dot {
@@ -363,26 +368,68 @@
         height: 4px;
         border-radius: 50%;
         background: radial-gradient(circle, #ff6040, #ff3020);
-        box-shadow: 0 0 6px #ff4020, 0 0 12px rgba(255, 60, 30, 0.4);
+        box-shadow:
+          0 0 6px #ff4020,
+          0 0 12px rgba(255, 60, 30, 0.4);
         animation: emberFloat 3s ease-in infinite;
         opacity: 0;
       }
 
-      .loader-embers span:nth-child(1) { left: 10%; animation-delay: 0s; }
-      .loader-embers span:nth-child(2) { left: 25%; animation-delay: 0.3s; }
-      .loader-embers span:nth-child(3) { left: 40%; animation-delay: 0.7s; }
-      .loader-embers span:nth-child(4) { left: 55%; animation-delay: 1.0s; }
-      .loader-embers span:nth-child(5) { left: 70%; animation-delay: 1.4s; }
-      .loader-embers span:nth-child(6) { left: 85%; animation-delay: 0.5s; }
-      .loader-embers span:nth-child(7) { left: 15%; animation-delay: 1.8s; }
-      .loader-embers span:nth-child(8) { left: 50%; animation-delay: 2.1s; }
-      .loader-embers span:nth-child(9) { left: 65%; animation-delay: 0.9s; }
-      .loader-embers span:nth-child(10) { left: 35%; animation-delay: 1.6s; }
+      .loader-embers span:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .loader-embers span:nth-child(2) {
+        left: 25%;
+        animation-delay: 0.3s;
+      }
+      .loader-embers span:nth-child(3) {
+        left: 40%;
+        animation-delay: 0.7s;
+      }
+      .loader-embers span:nth-child(4) {
+        left: 55%;
+        animation-delay: 1s;
+      }
+      .loader-embers span:nth-child(5) {
+        left: 70%;
+        animation-delay: 1.4s;
+      }
+      .loader-embers span:nth-child(6) {
+        left: 85%;
+        animation-delay: 0.5s;
+      }
+      .loader-embers span:nth-child(7) {
+        left: 15%;
+        animation-delay: 1.8s;
+      }
+      .loader-embers span:nth-child(8) {
+        left: 50%;
+        animation-delay: 2.1s;
+      }
+      .loader-embers span:nth-child(9) {
+        left: 65%;
+        animation-delay: 0.9s;
+      }
+      .loader-embers span:nth-child(10) {
+        left: 35%;
+        animation-delay: 1.6s;
+      }
 
       @keyframes emberFloat {
-        0% { bottom: -5%; opacity: 0; transform: translateX(0) scale(0.5); }
-        15% { opacity: 1; }
-        100% { bottom: 110%; opacity: 0; transform: translateX(20px) scale(0); }
+        0% {
+          bottom: -5%;
+          opacity: 0;
+          transform: translateX(0) scale(0.5);
+        }
+        15% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 110%;
+          opacity: 0;
+          transform: translateX(20px) scale(0);
+        }
       }
 
       /* Katana loader */
@@ -412,8 +459,15 @@
         width: 0%;
         max-width: 140px;
         height: 3px;
-        background: linear-gradient(90deg, rgba(200, 220, 255, 0.1), #e8f0ff, #ffffff);
-        box-shadow: 0 0 8px rgba(200, 220, 255, 0.5), 0 0 20px rgba(200, 220, 255, 0.2);
+        background: linear-gradient(
+          90deg,
+          rgba(200, 220, 255, 0.1),
+          #e8f0ff,
+          #ffffff
+        );
+        box-shadow:
+          0 0 8px rgba(200, 220, 255, 0.5),
+          0 0 20px rgba(200, 220, 255, 0.2);
         border-radius: 1px;
         transition: width 200ms linear;
         z-index: 1;
@@ -469,13 +523,24 @@
         animation: kanjiAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      .kanji-reveal:nth-child(1) { animation-delay: 0.2s; }
-      .kanji-reveal:nth-child(2) { animation-delay: 0.5s; }
-      .kanji-reveal:nth-child(3) { animation-delay: 0.8s; }
-      .kanji-reveal:nth-child(4) { animation-delay: 1.1s; }
+      .kanji-reveal:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .kanji-reveal:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .kanji-reveal:nth-child(3) {
+        animation-delay: 0.8s;
+      }
+      .kanji-reveal:nth-child(4) {
+        animation-delay: 1.1s;
+      }
 
       @keyframes kanjiAppear {
-        to { opacity: 1; transform: translateY(0) scale(1); }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
       }
 
       .loader-sub {
@@ -650,15 +715,29 @@
         border-radius: 0.15rem;
         background: rgba(10, 14, 20, 0.85);
         backdrop-filter: blur(28px);
-        box-shadow: 0 4px 24px rgba(255, 50, 80, 0.15), inset 0 0 16px rgba(255, 50, 80, 0.05);
+        box-shadow:
+          0 4px 24px rgba(255, 50, 80, 0.15),
+          inset 0 0 16px rgba(255, 50, 80, 0.05);
         flex-wrap: wrap;
         position: relative;
       }
 
-      .nav-shell .hud-bracket.tl { top: -1px; left: -1px; }
-      .nav-shell .hud-bracket.tr { top: -1px; right: -1px; }
-      .nav-shell .hud-bracket.bl { bottom: -1px; left: -1px; }
-      .nav-shell .hud-bracket.br { bottom: -1px; right: -1px; }
+      .nav-shell .hud-bracket.tl {
+        top: -1px;
+        left: -1px;
+      }
+      .nav-shell .hud-bracket.tr {
+        top: -1px;
+        right: -1px;
+      }
+      .nav-shell .hud-bracket.bl {
+        bottom: -1px;
+        left: -1px;
+      }
+      .nav-shell .hud-bracket.br {
+        bottom: -1px;
+        right: -1px;
+      }
 
       .brand {
         display: flex;
@@ -708,7 +787,7 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
       }
-      
+
       .brand-sub {
         display: flex;
         align-items: center;
@@ -727,8 +806,12 @@
       }
 
       @keyframes statusBlink {
-        0% { opacity: 0.3; }
-        100% { opacity: 1; }
+        0% {
+          opacity: 0.3;
+        }
+        100% {
+          opacity: 1;
+        }
       }
 
       .nav-links {
@@ -744,10 +827,12 @@
         border-radius: 0.35rem;
         font-size: var(--text-sm);
         color: var(--color-text-muted);
-        transition: color 250ms ease, background 250ms ease;
+        transition:
+          color 250ms ease,
+          background 250ms ease;
         position: relative;
       }
-      
+
       .nav-links a:hover,
       .nav-links a.active {
         color: var(--color-text);
@@ -765,7 +850,9 @@
         filter: drop-shadow(0 0 4px var(--color-blue));
         opacity: 0;
         transform: scaleX(0.6);
-        transition: opacity 300ms ease, transform 300ms ease;
+        transition:
+          opacity 300ms ease,
+          transform 300ms ease;
       }
 
       .nav-links a.active::after {
@@ -1047,7 +1134,9 @@
         border-radius: 1.25rem;
         border: 1px solid rgba(255, 255, 255, 0.08);
         background: rgba(10, 14, 20, 0.45);
-        box-shadow: var(--shadow-lg), inset 0 0 32px rgba(255, 255, 255, 0.02);
+        box-shadow:
+          var(--shadow-lg),
+          inset 0 0 32px rgba(255, 255, 255, 0.02);
         overflow: hidden;
         backdrop-filter: blur(28px);
         opacity: 0;
@@ -1133,10 +1222,26 @@
         pointer-events: none;
         transition: border-color 300ms ease;
       }
-      .hud-bracket.tl { top: 6px; left: 6px; border-width: 1.5px 0 0 1.5px; }
-      .hud-bracket.tr { top: 6px; right: 6px; border-width: 1.5px 1.5px 0 0; }
-      .hud-bracket.bl { bottom: 6px; left: 6px; border-width: 0 0 1.5px 1.5px; }
-      .hud-bracket.br { bottom: 6px; right: 6px; border-width: 0 1.5px 1.5px 0; }
+      .hud-bracket.tl {
+        top: 6px;
+        left: 6px;
+        border-width: 1.5px 0 0 1.5px;
+      }
+      .hud-bracket.tr {
+        top: 6px;
+        right: 6px;
+        border-width: 1.5px 1.5px 0 0;
+      }
+      .hud-bracket.bl {
+        bottom: 6px;
+        left: 6px;
+        border-width: 0 0 1.5px 1.5px;
+      }
+      .hud-bracket.br {
+        bottom: 6px;
+        right: 6px;
+        border-width: 0 1.5px 1.5px 0;
+      }
 
       .stat-card:hover .hud-bracket {
         border-color: var(--color-blue);
@@ -1170,10 +1275,18 @@
         opacity: 1;
       }
 
-      .hero.is-active .stat-card:nth-child(1) { transition-delay: 420ms; }
-      .hero.is-active .stat-card:nth-child(2) { transition-delay: 500ms; }
-      .hero.is-active .stat-card:nth-child(3) { transition-delay: 580ms; }
-      .hero.is-active .stat-card:nth-child(4) { transition-delay: 660ms; }
+      .hero.is-active .stat-card:nth-child(1) {
+        transition-delay: 420ms;
+      }
+      .hero.is-active .stat-card:nth-child(2) {
+        transition-delay: 500ms;
+      }
+      .hero.is-active .stat-card:nth-child(3) {
+        transition-delay: 580ms;
+      }
+      .hero.is-active .stat-card:nth-child(4) {
+        transition-delay: 660ms;
+      }
 
       .stat-card strong {
         display: block;
@@ -1209,13 +1322,9 @@
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.06);
         background:
-          linear-gradient(
-            180deg,
-            rgba(255, 50, 80, 0.05),
-            rgba(0, 0, 0, 0.8)
-          ),
+          linear-gradient(180deg, rgba(255, 50, 80, 0.05), rgba(0, 0, 0, 0.8)),
           var(--card-bg, rgba(10, 10, 10, 0.95));
-        box-shadow: 0 12px 32px rgba(0,0,0,0.8);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
         transform-style: preserve-3d;
         transition:
           transform 350ms cubic-bezier(0.2, 0.9, 0.2, 1),
@@ -2062,8 +2171,6 @@
         opacity: 1;
       }
 
-
-
       footer {
         position: relative;
         padding-block: var(--space-20) var(--space-12);
@@ -2122,7 +2229,7 @@
         border-color: rgba(255, 255, 255, 0.2);
         color: var(--color-text);
       }
-      
+
       .footer-links a .hud-bracket {
         border-color: rgba(255, 255, 255, 0.12);
         transition: border-color 250ms ease;
@@ -2457,11 +2564,13 @@
       /* ==========================================================================
          CINEMATIC HEROES SHOWCASE & ALIGNMENT STYLES
          ========================================================================== */
-      .style-visual, .sword-view {
+      .style-visual,
+      .sword-view {
         position: relative;
         overflow: hidden;
       }
-      .style-visual canvas, .sword-view canvas {
+      .style-visual canvas,
+      .sword-view canvas {
         position: absolute;
         inset: 0;
         width: 100% !important;
@@ -2512,7 +2621,7 @@
         padding-block: 0 !important;
         background: #050507;
       }
-      
+
       .heroes-pin-container {
         position: relative;
         width: 100%;
@@ -2531,7 +2640,7 @@
         z-index: 10;
         pointer-events: none;
       }
-      
+
       .heroes-slides-wrapper {
         position: relative;
         width: 100%;
@@ -2540,7 +2649,7 @@
         margin: 0 auto;
         padding-inline: 1.5rem;
       }
-      
+
       .hero-slide {
         position: absolute;
         inset: 0;
@@ -2552,16 +2661,17 @@
         align-items: center;
         justify-content: center;
         z-index: 1;
-        transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-                    visibility 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        transition:
+          opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+          visibility 600ms cubic-bezier(0.16, 1, 0.3, 1);
       }
-      
+
       .hero-slide.active {
         opacity: 1;
         visibility: visible;
         z-index: 2;
       }
-      
+
       .slide-content {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
@@ -2570,7 +2680,7 @@
         width: 100%;
         height: 100%;
       }
-      
+
       .slide-text {
         position: relative;
         z-index: 5;
@@ -2581,7 +2691,7 @@
         backdrop-filter: blur(20px);
         box-shadow: var(--shadow-lg);
       }
-      
+
       .slide-title {
         font-family: var(--font-display);
         font-size: clamp(2rem, 4vw, 3.2rem);
@@ -2593,7 +2703,7 @@
         background-clip: text;
         color: transparent;
       }
-      
+
       .slide-desc {
         color: var(--color-text-muted);
         font-size: var(--text-sm);
@@ -2601,20 +2711,20 @@
         margin-bottom: var(--space-5);
         max-width: 48ch;
       }
-      
+
       .slide-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.6rem;
         margin-bottom: var(--space-5);
       }
-      
+
       .slide-stats {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.75rem;
       }
-      
+
       .slide-visual-wrapper {
         position: relative;
         width: 100%;
@@ -2642,14 +2752,24 @@
 
       /* Tanjiro water concentric ripples */
       .slide-glow-plate.tanjiro {
-        background: radial-gradient(circle, rgba(103, 185, 255, 0.32) 0%, rgba(34, 68, 136, 0.08) 70%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(103, 185, 255, 0.32) 0%,
+          rgba(34, 68, 136, 0.08) 70%,
+          transparent 100%
+        );
         border: 2px dashed rgba(103, 185, 255, 0.3);
         animation: spinRipple 22s linear infinite;
       }
 
       /* Nezuko morphing blood flame aura */
       .slide-glow-plate.nezuko {
-        background: radial-gradient(circle at 30% 30%, rgba(255, 0, 80, 0.4) 0%, rgba(180, 0, 40, 0.12) 50%, transparent 80%);
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 0, 80, 0.4) 0%,
+          rgba(180, 0, 40, 0.12) 50%,
+          transparent 80%
+        );
         border: 2px dashed rgba(255, 0, 80, 0.35);
         border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
         animation: nezukoBloodFlame 6s ease-in-out infinite alternate;
@@ -2672,7 +2792,12 @@
 
       /* Zenitsu lightning circle */
       .slide-glow-plate.zenitsu {
-        background: radial-gradient(circle, rgba(255, 204, 72, 0.3) 0%, rgba(255, 140, 0, 0.08) 70%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 204, 72, 0.3) 0%,
+          rgba(255, 140, 0, 0.08) 70%,
+          transparent 100%
+        );
         border: 1px solid rgba(255, 204, 72, 0.25);
         box-shadow: 0 0 50px rgba(255, 204, 72, 0.18);
         animation: spinRipple 16s linear infinite reverse;
@@ -2680,21 +2805,36 @@
 
       /* Inosuke beast saw gear */
       .slide-glow-plate.inosuke {
-        background: radial-gradient(circle, rgba(103, 214, 141, 0.32) 0%, rgba(0, 100, 80, 0.08) 68%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(103, 214, 141, 0.32) 0%,
+          rgba(0, 100, 80, 0.08) 68%,
+          transparent 100%
+        );
         border: 3px double rgba(103, 214, 141, 0.26);
         animation: spinRipple 12s steps(12) infinite;
       }
 
       @keyframes spinRipple {
-        from { transform: translateZ(-30px) rotate(0deg); }
-        to { transform: translateZ(-30px) rotate(360deg); }
+        from {
+          transform: translateZ(-30px) rotate(0deg);
+        }
+        to {
+          transform: translateZ(-30px) rotate(360deg);
+        }
       }
 
       @keyframes pulseAura {
-        0% { transform: translateZ(-30px) scale(0.92); opacity: 0.45; }
-        100% { transform: translateZ(-30px) scale(1.08); opacity: 0.72; }
+        0% {
+          transform: translateZ(-30px) scale(0.92);
+          opacity: 0.45;
+        }
+        100% {
+          transform: translateZ(-30px) scale(1.08);
+          opacity: 0.72;
+        }
       }
-      
+
       .slide-image {
         width: 100%;
         height: 100%;
@@ -2706,23 +2846,31 @@
         will-change: transform;
         z-index: 1;
       }
-      
+
       /* Character specific borders and glows */
       .hero-slide[data-character="tanjiro"] .slide-text {
         border-color: rgba(103, 185, 255, 0.22);
-        box-shadow: var(--shadow-lg), 0 0 32px rgba(103, 185, 255, 0.06);
+        box-shadow:
+          var(--shadow-lg),
+          0 0 32px rgba(103, 185, 255, 0.06);
       }
       .hero-slide[data-character="nezuko"] .slide-text {
         border-color: rgba(255, 115, 198, 0.22);
-        box-shadow: var(--shadow-lg), 0 0 32px rgba(255, 115, 198, 0.06);
+        box-shadow:
+          var(--shadow-lg),
+          0 0 32px rgba(255, 115, 198, 0.06);
       }
       .hero-slide[data-character="zenitsu"] .slide-text {
         border-color: rgba(255, 204, 72, 0.22);
-        box-shadow: var(--shadow-lg), 0 0 32px rgba(255, 204, 72, 0.06);
+        box-shadow:
+          var(--shadow-lg),
+          0 0 32px rgba(255, 204, 72, 0.06);
       }
       .hero-slide[data-character="inosuke"] .slide-text {
         border-color: rgba(103, 214, 141, 0.22);
-        box-shadow: var(--shadow-lg), 0 0 32px rgba(103, 214, 141, 0.06);
+        box-shadow:
+          var(--shadow-lg),
+          0 0 32px rgba(103, 214, 141, 0.06);
       }
 
       /* Mobile layout adjustments */
@@ -2732,13 +2880,13 @@
           overflow: visible !important;
           padding-block: var(--space-12) !important;
         }
-        
+
         .heroes-pin-container {
           height: auto !important;
           overflow: visible !important;
           display: block !important;
         }
-        
+
         .heroes-slides-wrapper {
           display: flex;
           flex-direction: column;
@@ -2746,7 +2894,7 @@
           height: auto !important;
           padding-inline: 1rem;
         }
-        
+
         .hero-slide {
           position: relative !important;
           inset: auto !important;
@@ -2758,31 +2906,31 @@
           display: block !important;
           transform: none !important;
         }
-        
+
         .slide-content {
           grid-template-columns: 1fr;
           gap: 1.5rem;
           height: auto !important;
         }
-        
+
         .slide-visual-wrapper {
           height: 480px !important;
           transform: none !important;
           opacity: 1 !important;
           order: -1; /* Image first on mobile */
         }
-        
+
         .slide-image {
           max-height: 440px !important;
         }
-        
+
         .slide-text {
           transform: none !important;
           opacity: 1 !important;
           padding: 1.25rem !important;
         }
       }
-      
+
       @media (max-width: 500px) {
         .slide-visual-wrapper {
           height: 340px !important;
@@ -2804,7 +2952,7 @@
         padding-block: 0 !important;
         background: #040406;
       }
-      
+
       .hashira-pin-container {
         position: relative;
         width: 100%;
@@ -2838,7 +2986,7 @@
         font-size: clamp(1.8rem, 3.5vw, 3rem);
         line-height: 1.1;
       }
-      
+
       .hashira-slides-wrapper {
         position: relative;
         width: 100%;
@@ -2847,7 +2995,7 @@
         margin: 0 auto;
         padding-inline: 1.5rem;
       }
-      
+
       .hashira-slide {
         position: absolute;
         inset: 0;
@@ -2859,10 +3007,11 @@
         align-items: center;
         justify-content: center;
         z-index: 1;
-        transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-                    visibility 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        transition:
+          opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+          visibility 600ms cubic-bezier(0.16, 1, 0.3, 1);
       }
-      
+
       .hashira-slide.active {
         opacity: 1;
         visibility: visible;
@@ -2876,7 +3025,9 @@
         background: var(--hashira-bg);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 2rem;
-        box-shadow: var(--shadow-lg), 0 0 32px var(--hashira-glow, rgba(255, 255, 255, 0.06));
+        box-shadow:
+          var(--shadow-lg),
+          0 0 32px var(--hashira-glow, rgba(255, 255, 255, 0.06));
         overflow: hidden;
         transform-style: preserve-3d;
         will-change: transform;
@@ -2913,63 +3064,121 @@
 
       /* Plating animations for Hashiras */
       .slide-glow-plate.giyu {
-        background: radial-gradient(circle, rgba(103, 185, 255, 0.32) 0%, rgba(34, 68, 136, 0.08) 70%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(103, 185, 255, 0.32) 0%,
+          rgba(34, 68, 136, 0.08) 70%,
+          transparent 100%
+        );
         border: 2px dashed rgba(103, 185, 255, 0.3);
         animation: spinRipple 22s linear infinite;
       }
       .slide-glow-plate.rengoku {
-        background: radial-gradient(circle, rgba(255, 173, 72, 0.32) 0%, rgba(180, 80, 10, 0.08) 65%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 173, 72, 0.32) 0%,
+          rgba(180, 80, 10, 0.08) 65%,
+          transparent 100%
+        );
         border: 2px dotted rgba(255, 173, 72, 0.3);
         animation: pulseAura 4s ease-in-out infinite alternate;
       }
       .slide-glow-plate.tengen {
-        background: radial-gradient(circle, rgba(255, 226, 112, 0.3) 0%, rgba(160, 100, 10, 0.06) 70%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 226, 112, 0.3) 0%,
+          rgba(160, 100, 10, 0.06) 70%,
+          transparent 100%
+        );
         border: 1px solid rgba(255, 226, 112, 0.25);
         box-shadow: 0 0 50px rgba(255, 226, 112, 0.18);
         animation: spinRipple 16s linear infinite reverse;
       }
       .slide-glow-plate.shinobu {
-        background: radial-gradient(circle, rgba(176, 131, 255, 0.32) 0%, rgba(100, 40, 180, 0.08) 68%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(176, 131, 255, 0.32) 0%,
+          rgba(100, 40, 180, 0.08) 68%,
+          transparent 100%
+        );
         border: 2px dashed rgba(176, 131, 255, 0.26);
         animation: pulseAura 3s ease-in-out infinite alternate-reverse;
       }
       .slide-glow-plate.muichiro {
-        background: radial-gradient(circle, rgba(103, 214, 210, 0.32) 0%, rgba(20, 120, 110, 0.06) 70%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(103, 214, 210, 0.32) 0%,
+          rgba(20, 120, 110, 0.06) 70%,
+          transparent 100%
+        );
         border: 1.5px solid rgba(103, 214, 210, 0.22);
         animation: spinRipple 26s linear infinite;
       }
       .slide-glow-plate.mitsuri {
-        background: radial-gradient(circle, rgba(255, 115, 198, 0.32) 0%, rgba(180, 20, 100, 0.06) 65%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 115, 198, 0.32) 0%,
+          rgba(180, 20, 100, 0.06) 65%,
+          transparent 100%
+        );
         border: 2px dotted rgba(255, 115, 198, 0.3);
         animation: pulseAura 3.6s ease-in-out infinite alternate;
       }
       .slide-glow-plate.gyomei {
-        background: radial-gradient(circle, rgba(172, 165, 157, 0.3) 0%, rgba(70, 70, 70, 0.08) 70%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(172, 165, 157, 0.3) 0%,
+          rgba(70, 70, 70, 0.08) 70%,
+          transparent 100%
+        );
         border: 2px dashed rgba(172, 165, 157, 0.24);
         animation: spinRipple 14s steps(6) infinite;
       }
       .slide-glow-plate.obanai {
-        background: radial-gradient(circle, rgba(180, 70, 255, 0.28) 0%, rgba(90, 10, 180, 0.06) 68%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(180, 70, 255, 0.28) 0%,
+          rgba(90, 10, 180, 0.06) 68%,
+          transparent 100%
+        );
         border: 2px solid rgba(180, 70, 255, 0.22);
         animation: spinRipple 18s linear infinite reverse;
       }
       .slide-glow-plate.sanemi {
-        background: radial-gradient(circle, rgba(103, 214, 141, 0.32) 0%, rgba(10, 120, 60, 0.08) 65%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(103, 214, 141, 0.32) 0%,
+          rgba(10, 120, 60, 0.08) 65%,
+          transparent 100%
+        );
         border: 3px double rgba(103, 214, 141, 0.26);
         animation: spinRipple 10s steps(10) infinite;
       }
       .slide-glow-plate.muzan {
-        background: radial-gradient(circle, rgba(255, 0, 50, 0.35) 0%, rgba(50, 0, 10, 0.12) 65%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 0, 50, 0.35) 0%,
+          rgba(50, 0, 10, 0.12) 65%,
+          transparent 100%
+        );
         border: 2px solid rgba(255, 0, 50, 0.4);
         box-shadow: 0 0 60px rgba(255, 0, 50, 0.22);
-        animation: pulseAura 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+        animation: pulseAura 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite
+          alternate;
       }
 
       /* Akaza — Snowflake compass glow */
       .slide-glow-plate.akaza {
-        background: radial-gradient(circle, rgba(100, 140, 255, 0.3) 0%, rgba(255, 80, 140, 0.12) 55%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(100, 140, 255, 0.3) 0%,
+          rgba(255, 80, 140, 0.12) 55%,
+          transparent 100%
+        );
         border: 2px solid rgba(100, 140, 255, 0.3);
-        box-shadow: 0 0 40px rgba(100, 140, 255, 0.15), 0 0 80px rgba(255, 80, 140, 0.08);
+        box-shadow:
+          0 0 40px rgba(100, 140, 255, 0.15),
+          0 0 80px rgba(255, 80, 140, 0.08);
         animation: compassSpin 8s linear infinite;
       }
 
@@ -2997,12 +3206,19 @@
       }
 
       @keyframes compassSpin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       /* Kokushibo — Moon breathing crescents */
       .slide-glow-plate.kokushibo {
-        background: radial-gradient(circle, rgba(160, 100, 255, 0.28) 0%, rgba(255, 200, 60, 0.08) 60%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(160, 100, 255, 0.28) 0%,
+          rgba(255, 200, 60, 0.08) 60%,
+          transparent 100%
+        );
         border: 2px solid rgba(160, 100, 255, 0.3);
         box-shadow: 0 0 50px rgba(160, 100, 255, 0.18);
         animation: moonPulse 3s ease-in-out infinite alternate;
@@ -3040,20 +3256,40 @@
       }
 
       @keyframes moonPulse {
-        0% { box-shadow: 0 0 40px rgba(160, 100, 255, 0.15); }
-        100% { box-shadow: 0 0 70px rgba(160, 100, 255, 0.3), 0 0 120px rgba(255, 200, 60, 0.08); }
+        0% {
+          box-shadow: 0 0 40px rgba(160, 100, 255, 0.15);
+        }
+        100% {
+          box-shadow:
+            0 0 70px rgba(160, 100, 255, 0.3),
+            0 0 120px rgba(255, 200, 60, 0.08);
+        }
       }
 
       @keyframes moonArc {
-        0%, 100% { opacity: 0.4; transform: rotate(-30deg) scale(0.9); }
-        50% { opacity: 1; transform: rotate(-10deg) scale(1.1); }
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: rotate(-30deg) scale(0.9);
+        }
+        50% {
+          opacity: 1;
+          transform: rotate(-10deg) scale(1.1);
+        }
       }
 
       /* Douma — Ice crystal frost */
       .slide-glow-plate.douma {
-        background: radial-gradient(circle, rgba(100, 220, 240, 0.3) 0%, rgba(200, 240, 255, 0.06) 60%, transparent 100%);
+        background: radial-gradient(
+          circle,
+          rgba(100, 220, 240, 0.3) 0%,
+          rgba(200, 240, 255, 0.06) 60%,
+          transparent 100%
+        );
         border: 2px solid rgba(100, 220, 240, 0.3);
-        box-shadow: 0 0 50px rgba(100, 220, 240, 0.15), 0 0 100px rgba(200, 240, 255, 0.05);
+        box-shadow:
+          0 0 50px rgba(100, 220, 240, 0.15),
+          0 0 100px rgba(200, 240, 255, 0.05);
         animation: icePulse 4s ease-in-out infinite alternate;
       }
 
@@ -3068,7 +3304,12 @@
         position: absolute;
         width: 40%;
         height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(200, 240, 255, 0.6), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 240, 255, 0.6),
+          transparent
+        );
         animation: iceShimmer 3s ease-in-out infinite;
       }
 
@@ -3086,13 +3327,28 @@
       }
 
       @keyframes icePulse {
-        0% { box-shadow: 0 0 30px rgba(100, 220, 240, 0.12); border-color: rgba(100, 220, 240, 0.2); }
-        100% { box-shadow: 0 0 60px rgba(100, 220, 240, 0.25), 0 0 100px rgba(200, 240, 255, 0.1); border-color: rgba(200, 240, 255, 0.5); }
+        0% {
+          box-shadow: 0 0 30px rgba(100, 220, 240, 0.12);
+          border-color: rgba(100, 220, 240, 0.2);
+        }
+        100% {
+          box-shadow:
+            0 0 60px rgba(100, 220, 240, 0.25),
+            0 0 100px rgba(200, 240, 255, 0.1);
+          border-color: rgba(200, 240, 255, 0.5);
+        }
       }
 
       @keyframes iceShimmer {
-        0%, 100% { opacity: 0.3; transform: rotate(-25deg) scaleX(0.5); }
-        50% { opacity: 1; transform: rotate(-25deg) scaleX(1.3); }
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: rotate(-25deg) scaleX(0.5);
+        }
+        50% {
+          opacity: 1;
+          transform: rotate(-25deg) scaleX(1.3);
+        }
       }
       /* Mobile layout adjustments for Hashira slideshow */
       @media (max-width: 1024px) {
@@ -3101,13 +3357,13 @@
           overflow: visible !important;
           padding-block: var(--space-16) !important;
         }
-        
+
         .hashira-pin-container {
           height: auto !important;
           overflow: visible !important;
           display: block !important;
         }
-        
+
         .hashira-header-overlay {
           position: relative !important;
           top: auto !important;
@@ -3124,7 +3380,7 @@
           height: auto !important;
           padding-inline: 1rem;
         }
-        
+
         .hashira-slide {
           position: relative !important;
           inset: auto !important;
@@ -3136,7 +3392,7 @@
           display: block !important;
           transform: none !important;
         }
-        
+
         .hashira-card-scaled {
           margin: 0 auto;
           height: 480px !important;
@@ -3166,13 +3422,18 @@
         background: rgba(255, 255, 255, 0.01);
         backdrop-filter: blur(12px);
         overflow: hidden;
-        transition: transform 300ms var(--ease-out), border-color 300ms ease, box-shadow 300ms ease;
+        transition:
+          transform 300ms var(--ease-out),
+          border-color 300ms ease,
+          box-shadow 300ms ease;
       }
 
       .cast-card:hover {
         transform: translateY(-5px);
         border-color: rgba(255, 255, 255, 0.16);
-        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.04);
+        box-shadow:
+          0 12px 36px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(255, 255, 255, 0.04);
       }
 
       .cast-card-header {
@@ -3263,10 +3524,22 @@
         border-color: rgba(255, 255, 255, 0.15);
         transition: border-color 300ms ease;
       }
-      .hashira-card-scaled .hud-bracket.tl { top: 12px; left: 12px; }
-      .hashira-card-scaled .hud-bracket.tr { top: 12px; right: 12px; }
-      .hashira-card-scaled .hud-bracket.bl { bottom: 12px; left: 12px; }
-      .hashira-card-scaled .hud-bracket.br { bottom: 12px; right: 12px; }
+      .hashira-card-scaled .hud-bracket.tl {
+        top: 12px;
+        left: 12px;
+      }
+      .hashira-card-scaled .hud-bracket.tr {
+        top: 12px;
+        right: 12px;
+      }
+      .hashira-card-scaled .hud-bracket.bl {
+        bottom: 12px;
+        left: 12px;
+      }
+      .hashira-card-scaled .hud-bracket.br {
+        bottom: 12px;
+        right: 12px;
+      }
 
       .hashira-card-scaled:hover .hud-bracket {
         border-color: var(--hashira-glow);
@@ -3352,7 +3625,9 @@
           </span>
           <span class="brand-text">
             <strong>Demon Slayer</strong>
-            <span class="brand-sub"><span class="status-light"></span>Scope C Cinematic Archive</span>
+            <span class="brand-sub"
+              ><span class="status-light"></span>Scope C Cinematic Archive</span
+            >
           </span>
         </a>
 
@@ -3470,7 +3745,9 @@
                   <p class="eyebrow">Water Breathing · Resolve</p>
                   <h3 class="slide-title">Tanjiro Kamado</h3>
                   <p class="slide-desc">
-                    Calm forward motion, circular flow, and water-ripple effects create a smooth reveal language built specifically around Tanjiro’s presence.
+                    Calm forward motion, circular flow, and water-ripple effects
+                    create a smooth reveal language built specifically around
+                    Tanjiro’s presence.
                   </p>
                   <div class="slide-tags">
                     <span class="tag">Nichirin Blade</span>
@@ -3508,7 +3785,9 @@
                   <p class="eyebrow">Demon Blood Art · Protection</p>
                   <h3 class="slide-title">Nezuko Kamado</h3>
                   <p class="slide-desc">
-                    Pink bloom pulses, ember lift, and floral-demon warmth let Nezuko’s transitions feel powerful, protective, and dangerous at once.
+                    Pink bloom pulses, ember lift, and floral-demon warmth let
+                    Nezuko’s transitions feel powerful, protective, and
+                    dangerous at once.
                   </p>
                   <div class="slide-tags">
                     <span class="tag">Blood Flame</span>
@@ -3546,7 +3825,9 @@
                   <p class="eyebrow">Thunder Breathing · Speed</p>
                   <h3 class="slide-title">Zenitsu Agatsuma</h3>
                   <p class="slide-desc">
-                    Snap timing, flash-blade streaks, and high-speed electrical crackles reveal Zenitsu in a high-impact thunderclap explosion.
+                    Snap timing, flash-blade streaks, and high-speed electrical
+                    crackles reveal Zenitsu in a high-impact thunderclap
+                    explosion.
                   </p>
                   <div class="slide-tags">
                     <span class="tag">Thunderclap</span>
@@ -3584,7 +3865,9 @@
                   <p class="eyebrow">Beast Breathing · Instinct</p>
                   <h3 class="slide-title">Inosuke Hashibira</h3>
                   <p class="slide-desc">
-                    Jagged dual blade slashes, feral drift, and wild movement pathways create an aggressive, high-energy animalistic transition.
+                    Jagged dual blade slashes, feral drift, and wild movement
+                    pathways create an aggressive, high-energy animalistic
+                    transition.
                   </p>
                   <div class="slide-tags">
                     <span class="tag">Dual Blades</span>
@@ -3669,24 +3952,30 @@
         </div>
       </section>
 
-      <section class="hashira-section" id="hashira" data-scene="hashira" data-wash-a="rgba(176,131,255,0.08)" data-wash-b="rgba(255,173,72,0.07)">
+      <section
+        class="hashira-section"
+        id="hashira"
+        data-scene="hashira"
+        data-wash-a="rgba(176,131,255,0.08)"
+        data-wash-b="rgba(255,173,72,0.07)"
+      >
         <div class="hashira-pin-container">
           <div class="hashira-header-overlay">
             <div class="section-heading-block">
-            <p class="eyebrow">Elite corps</p>
-            <h2 class="section-title">
-              <span class="section-entry-line"
-                ><span>The Nine Hashira</span></span
-              >
-            </h2>
-            <p class="section-copy">
-              The Hashira hall keeps the original card structure, but now
-              reveals in waves and uses subtle aura responses so the section
-              feels ceremonial rather than repetitive.
-            </p>
+              <p class="eyebrow">Elite corps</p>
+              <h2 class="section-title">
+                <span class="section-entry-line"
+                  ><span>The Nine Hashira</span></span
+                >
+              </h2>
+              <p class="section-copy">
+                The Hashira hall keeps the original card structure, but now
+                reveals in waves and uses subtle aura responses so the section
+                feels ceremonial rather than repetitive.
+              </p>
+            </div>
           </div>
-          </div>
-                    <canvas id="hashira-slash-canvas"></canvas>
+          <canvas id="hashira-slash-canvas"></canvas>
           <div class="hashira-slides-wrapper">
             <!-- Giyu Tomioka Slide -->
             <div class="hashira-slide active" data-character="giyu">
@@ -3694,7 +3983,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Water Hashira</p>
                   <h3 class="slide-title">Giyu Tomioka</h3>
-                  <p class="slide-desc">Asymmetric haori split, cool cyan aura, restrained blade line.</p>
+                  <p class="slide-desc">
+                    Asymmetric haori split, cool cyan aura, restrained blade
+                    line.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Water Pillar</span>
                     <span class="tag">Restrained</span>
@@ -3711,21 +4003,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate giyu"></div>
-                  <img class="slide-image" src="giyu.png" alt="Giyu Tomioka" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(10, 24, 36, 0.95),
-                  rgba(7, 13, 18, 0.92)
-                );
-                --hashira-glow: rgba(103, 185, 255, 0.28);
-                --hashira-glow-core: rgba(103, 185, 255, 0.28);">
+                  <img
+                    class="slide-image"
+                    src="giyu.png"
+                    alt="Giyu Tomioka"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(10, 24, 36, 0.95),
+                        rgba(7, 13, 18, 0.92)
+                      );
+                      --hashira-glow: rgba(103, 185, 255, 0.28);
+                      --hashira-glow-core: rgba(103, 185, 255, 0.28);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3736,7 +4042,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Flame Hashira</p>
                   <h3 class="slide-title">Kyojuro Rengoku</h3>
-                  <p class="slide-desc">Flame hair silhouette, bold cape volume, blazing orange atmosphere.</p>
+                  <p class="slide-desc">
+                    Flame hair silhouette, bold cape volume, blazing orange
+                    atmosphere.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Flame Pillar</span>
                     <span class="tag">Blazing Cape</span>
@@ -3753,21 +4062,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate rengoku"></div>
-                  <img class="slide-image" src="rengoku.png" alt="Kyojuro Rengoku" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(36, 14, 8, 0.96),
-                  rgba(16, 8, 5, 0.92)
-                );
-                --hashira-glow: rgba(255, 173, 72, 0.28);
-                --hashira-glow-core: rgba(255, 173, 72, 0.26);">
+                  <img
+                    class="slide-image"
+                    src="rengoku.png"
+                    alt="Kyojuro Rengoku"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(36, 14, 8, 0.96),
+                        rgba(16, 8, 5, 0.92)
+                      );
+                      --hashira-glow: rgba(255, 173, 72, 0.28);
+                      --hashira-glow-core: rgba(255, 173, 72, 0.26);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3778,7 +4101,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Sound Hashira</p>
                   <h3 class="slide-title">Tengen Uzui</h3>
-                  <p class="slide-desc">Headband silhouette, mirrored weapon bars, flashy gold ring pulses.</p>
+                  <p class="slide-desc">
+                    Headband silhouette, mirrored weapon bars, flashy gold ring
+                    pulses.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Sound Pillar</span>
                     <span class="tag">Chained Cleavers</span>
@@ -3795,21 +4121,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate tengen"></div>
-                  <img class="slide-image" src="tengen.png" alt="Tengen Uzui" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(34, 28, 18, 0.95),
-                  rgba(13, 11, 9, 0.92)
-                );
-                --hashira-glow: rgba(255, 226, 112, 0.26);
-                --hashira-glow-core: rgba(255, 226, 112, 0.24);">
+                  <img
+                    class="slide-image"
+                    src="tengen.png"
+                    alt="Tengen Uzui"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(34, 28, 18, 0.95),
+                        rgba(13, 11, 9, 0.92)
+                      );
+                      --hashira-glow: rgba(255, 226, 112, 0.26);
+                      --hashira-glow-core: rgba(255, 226, 112, 0.24);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3820,7 +4160,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Insect Hashira</p>
                   <h3 class="slide-title">Shinobu Kocho</h3>
-                  <p class="slide-desc">Butterfly-wing geometry, violet haze, needle-thin blade profile.</p>
+                  <p class="slide-desc">
+                    Butterfly-wing geometry, violet haze, needle-thin blade
+                    profile.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Insect Pillar</span>
                     <span class="tag">Wisteria Venom</span>
@@ -3837,21 +4180,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate shinobu"></div>
-                  <img class="slide-image" src="shinobu.png" alt="Shinobu Kocho" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(23, 12, 31, 0.95),
-                  rgba(10, 8, 17, 0.92)
-                );
-                --hashira-glow: rgba(176, 131, 255, 0.26);
-                --hashira-glow-core: rgba(176, 131, 255, 0.24);">
+                  <img
+                    class="slide-image"
+                    src="shinobu.png"
+                    alt="Shinobu Kocho"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(23, 12, 31, 0.95),
+                        rgba(10, 8, 17, 0.92)
+                      );
+                      --hashira-glow: rgba(176, 131, 255, 0.26);
+                      --hashira-glow-core: rgba(176, 131, 255, 0.24);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3862,7 +4219,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Mist Hashira</p>
                   <h3 class="slide-title">Muichiro Tokito</h3>
-                  <p class="slide-desc">Muted silhouette, low-contrast haze, drifting fog circles and soft steel.</p>
+                  <p class="slide-desc">
+                    Muted silhouette, low-contrast haze, drifting fog circles
+                    and soft steel.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Mist Pillar</span>
                     <span class="tag">Foggy Sight</span>
@@ -3879,21 +4239,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate muichiro"></div>
-                  <img class="slide-image" src="muichiro.png" alt="Muichiro Tokito" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(18, 20, 24, 0.95),
-                  rgba(8, 9, 12, 0.92)
-                );
-                --hashira-glow: rgba(206, 218, 232, 0.2);
-                --hashira-glow-core: rgba(206, 218, 232, 0.16);">
+                  <img
+                    class="slide-image"
+                    src="muichiro.png"
+                    alt="Muichiro Tokito"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(18, 20, 24, 0.95),
+                        rgba(8, 9, 12, 0.92)
+                      );
+                      --hashira-glow: rgba(206, 218, 232, 0.2);
+                      --hashira-glow-core: rgba(206, 218, 232, 0.16);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3904,7 +4278,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Love Hashira</p>
                   <h3 class="slide-title">Mitsuri Kanroji</h3>
-                  <p class="slide-desc">Pink and lime dual-tone silhouette, ribboned softness, bright energy bloom.</p>
+                  <p class="slide-desc">
+                    Pink and lime dual-tone silhouette, ribboned softness,
+                    bright energy bloom.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Love Pillar</span>
                     <span class="tag">Whip Blade</span>
@@ -3921,21 +4298,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate mitsuri"></div>
-                  <img class="slide-image" src="mitsuri.png" alt="Mitsuri Kanroji" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(37, 12, 28, 0.95),
-                  rgba(18, 9, 17, 0.92)
-                );
-                --hashira-glow: rgba(255, 134, 189, 0.26);
-                --hashira-glow-core: rgba(255, 134, 189, 0.22);">
+                  <img
+                    class="slide-image"
+                    src="mitsuri.png"
+                    alt="Mitsuri Kanroji"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(37, 12, 28, 0.95),
+                        rgba(18, 9, 17, 0.92)
+                      );
+                      --hashira-glow: rgba(255, 134, 189, 0.26);
+                      --hashira-glow-core: rgba(255, 134, 189, 0.22);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3946,7 +4337,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Stone Hashira</p>
                   <h3 class="slide-title">Gyomei Himejima</h3>
-                  <p class="slide-desc">Massive volume, grounded slab silhouette, prayer-bead rhythm and chain weight.</p>
+                  <p class="slide-desc">
+                    Massive volume, grounded slab silhouette, prayer-bead rhythm
+                    and chain weight.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Stone Pillar</span>
                     <span class="tag">Iron Flail</span>
@@ -3963,21 +4357,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate gyomei"></div>
-                  <img class="slide-image" src="gyomei.png" alt="Gyomei Himejima" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(24, 24, 24, 0.96),
-                  rgba(10, 10, 10, 0.92)
-                );
-                --hashira-glow: rgba(204, 204, 204, 0.18);
-                --hashira-glow-core: rgba(204, 204, 204, 0.14);">
+                  <img
+                    class="slide-image"
+                    src="gyomei.png"
+                    alt="Gyomei Himejima"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(24, 24, 24, 0.96),
+                        rgba(10, 10, 10, 0.92)
+                      );
+                      --hashira-glow: rgba(204, 204, 204, 0.18);
+                      --hashira-glow-core: rgba(204, 204, 204, 0.14);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -3988,7 +4396,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Serpent Hashira</p>
                   <h3 class="slide-title">Obanai Iguro</h3>
-                  <p class="slide-desc">Bandaged pale head, black robe mass, coiling snake-like ribbon trail.</p>
+                  <p class="slide-desc">
+                    Bandaged pale head, black robe mass, coiling snake-like
+                    ribbon trail.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Serpent Pillar</span>
                     <span class="tag">Coil Slither</span>
@@ -4005,21 +4416,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate obanai"></div>
-                  <img class="slide-image" src="obanai.png" alt="Obanai Iguro" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(22, 14, 25, 0.95),
-                  rgba(12, 9, 15, 0.92)
-                );
-                --hashira-glow: rgba(180, 70, 255, 0.22);
-                --hashira-glow-core: rgba(180, 70, 255, 0.2);">
+                  <img
+                    class="slide-image"
+                    src="obanai.png"
+                    alt="Obanai Iguro"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(22, 14, 25, 0.95),
+                        rgba(12, 9, 15, 0.92)
+                      );
+                      --hashira-glow: rgba(180, 70, 255, 0.22);
+                      --hashira-glow-core: rgba(180, 70, 255, 0.2);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -4030,7 +4455,10 @@
                 <div class="slide-text">
                   <p class="eyebrow">Wind Hashira</p>
                   <h3 class="slide-title">Sanemi Shinazugawa</h3>
-                  <p class="slide-desc">Scarred, spiked energy, torn-edge silhouette and violent pale wind slashes.</p>
+                  <p class="slide-desc">
+                    Scarred, spiked energy, torn-edge silhouette and violent
+                    pale wind slashes.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Wind Pillar</span>
                     <span class="tag">Slicing Cyclones</span>
@@ -4047,21 +4475,35 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate sanemi"></div>
-                  <img class="slide-image" src="sanemi.png" alt="Sanemi Shinazugawa" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(
-                  160deg,
-                  rgba(18, 18, 18, 0.96),
-                  rgba(8, 8, 8, 0.92)
-                );
-                --hashira-glow: rgba(228, 228, 228, 0.22);
-                --hashira-glow-core: rgba(228, 228, 228, 0.18);">
+                  <img
+                    class="slide-image"
+                    src="sanemi.png"
+                    alt="Sanemi Shinazugawa"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(18, 18, 18, 0.96),
+                        rgba(8, 8, 8, 0.92)
+                      );
+                      --hashira-glow: rgba(228, 228, 228, 0.22);
+                      --hashira-glow-core: rgba(228, 228, 228, 0.18);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual">
-                      
-                    </div>
+                    <div class="hashira-visual"></div>
                   </div>
                 </div>
               </div>
@@ -4072,7 +4514,11 @@
                 <div class="slide-text">
                   <p class="eyebrow">Upper Rank Three · Destructive Death</p>
                   <h3 class="slide-title">Akaza</h3>
-                  <p class="slide-desc">Martial arts demon with compass needle Blood Demon Art. Snowflake-patterned shockwaves and devastating fist techniques.</p>
+                  <p class="slide-desc">
+                    Martial arts demon with compass needle Blood Demon Art.
+                    Snowflake-patterned shockwaves and devastating fist
+                    techniques.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Upper Three</span>
                     <span class="tag">Compass Needle</span>
@@ -4089,8 +4535,30 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate akaza"></div>
-                  <img class="slide-image" src="akaza_generated.png" alt="Akaza" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(160deg, rgba(20, 8, 30, 0.96), rgba(8, 4, 12, 0.92)); --hashira-glow: rgba(100, 140, 255, 0.3); --hashira-glow-core: rgba(255, 80, 140, 0.25);">
+                  <img
+                    class="slide-image"
+                    src="akaza_generated.png"
+                    alt="Akaza"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(20, 8, 30, 0.96),
+                        rgba(8, 4, 12, 0.92)
+                      );
+                      --hashira-glow: rgba(100, 140, 255, 0.3);
+                      --hashira-glow-core: rgba(255, 80, 140, 0.25);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
@@ -4109,7 +4577,11 @@
                 <div class="slide-text">
                   <p class="eyebrow">Upper Rank One · Moon Breathing</p>
                   <h3 class="slide-title">Kokushibo</h3>
-                  <p class="slide-desc">Former Demon Slayer turned demon. Wields a fleshy katana with six eyes, unleashing chaotic crescent blades of moon-lit destruction.</p>
+                  <p class="slide-desc">
+                    Former Demon Slayer turned demon. Wields a fleshy katana
+                    with six eyes, unleashing chaotic crescent blades of
+                    moon-lit destruction.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Upper One</span>
                     <span class="tag">Moon Breathing</span>
@@ -4126,8 +4598,30 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate kokushibo"></div>
-                  <img class="slide-image" src="kokushibo_generated.png" alt="Kokushibo" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(160deg, rgba(20, 10, 30, 0.96), rgba(6, 2, 14, 0.92)); --hashira-glow: rgba(160, 100, 255, 0.35); --hashira-glow-core: rgba(255, 200, 60, 0.2);">
+                  <img
+                    class="slide-image"
+                    src="kokushibo_generated.png"
+                    alt="Kokushibo"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(20, 10, 30, 0.96),
+                        rgba(6, 2, 14, 0.92)
+                      );
+                      --hashira-glow: rgba(160, 100, 255, 0.35);
+                      --hashira-glow-core: rgba(255, 200, 60, 0.2);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
@@ -4146,7 +4640,11 @@
                 <div class="slide-text">
                   <p class="eyebrow">Upper Rank Two · Cryokinesis</p>
                   <h3 class="slide-title">Douma</h3>
-                  <p class="slide-desc">Ice-wielding demon with frozen lotus Blood Demon Art. Crystalline shards and frigid mist conceal a psychopathic serenity.</p>
+                  <p class="slide-desc">
+                    Ice-wielding demon with frozen lotus Blood Demon Art.
+                    Crystalline shards and frigid mist conceal a psychopathic
+                    serenity.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Upper Two</span>
                     <span class="tag">Frozen Lotus</span>
@@ -4163,8 +4661,30 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate douma"></div>
-                  <img class="slide-image" src="douma_generated.png" alt="Douma" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(160deg, rgba(8, 18, 24, 0.96), rgba(2, 8, 12, 0.92)); --hashira-glow: rgba(100, 220, 240, 0.35); --hashira-glow-core: rgba(200, 240, 255, 0.2);">
+                  <img
+                    class="slide-image"
+                    src="douma_generated.png"
+                    alt="Douma"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(
+                        160deg,
+                        rgba(8, 18, 24, 0.96),
+                        rgba(2, 8, 12, 0.92)
+                      );
+                      --hashira-glow: rgba(100, 220, 240, 0.35);
+                      --hashira-glow-core: rgba(200, 240, 255, 0.2);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
@@ -4183,7 +4703,11 @@
                 <div class="slide-text">
                   <p class="eyebrow">Demon Progenitor · Absolute Will</p>
                   <h3 class="slide-title">Kibutsuji Muzan</h3>
-                  <p class="slide-desc">The ultimate antagonist. Shifting forms, crimson-eyed master of the Infinity Castle, wielding whipping blood tendrils and absolute dominion.</p>
+                  <p class="slide-desc">
+                    The ultimate antagonist. Shifting forms, crimson-eyed master
+                    of the Infinity Castle, wielding whipping blood tendrils and
+                    absolute dominion.
+                  </p>
                   <div class="slide-tags">
                     <span class="tag">Demon King</span>
                     <span class="tag">Blood Demon Art</span>
@@ -4200,18 +4724,107 @@
                 </div>
                 <div class="slide-visual-wrapper">
                   <div class="slide-glow-plate muzan"></div>
-                  <img class="slide-image" src="muzan.png" alt="Kibutsuji Muzan" loading="lazy" decoding="async" width="900" height="1200" onload="this.style.opacity='1';" onerror="this.style.display='none';" style="opacity:0; transition: opacity 0.3s ease;" />
-                  <div class="hashira-card-scaled" style="--hashira-bg: linear-gradient(160deg, #100002, #040001); --hashira-glow: rgba(255, 0, 50, 0.4); --hashira-glow-core: rgba(255, 0, 50, 0.35);">
+                  <img
+                    class="slide-image"
+                    src="muzan.png"
+                    alt="Kibutsuji Muzan"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="1200"
+                    onload="this.style.opacity = '1'"
+                    onerror="this.style.display = 'none'"
+                    style="opacity: 0; transition: opacity 0.3s ease"
+                  />
+                  <div
+                    class="hashira-card-scaled"
+                    style="
+                      --hashira-bg: linear-gradient(160deg, #100002, #040001);
+                      --hashira-glow: rgba(255, 0, 50, 0.4);
+                      --hashira-glow-core: rgba(255, 0, 50, 0.35);
+                    "
+                  >
                     <div class="hud-bracket tl"></div>
                     <div class="hud-bracket tr"></div>
                     <div class="hud-bracket bl"></div>
                     <div class="hud-bracket br"></div>
-                    <div class="hashira-visual" style="inset: auto -5% -10% auto; width: 72%;">
-                      <div style="inset: 6% 6% 6% 6%; border: 1px solid rgba(255, 0, 50, 0.28); position: absolute; border-radius: 999px;"></div>
-                      <div style="inset: 22% 22% 10% 28%; background: linear-gradient(180deg, #1f0206, #000000); clip-path: polygon(50% 0%, 80% 30%, 85% 100%, 15% 100%, 20% 30%); position: absolute; border-radius: 999px;"></div>
-                      <div style="top: 14%; left: 45%; width: 14%; height: 14%; background: radial-gradient(circle, #ff0032, #100002 75%); box-shadow: 0 0 16px rgba(255, 0, 50, 0.6); position: absolute; border-radius: 999px;"></div>
-                      <div style="top: 36%; left: 22%; width: 56%; height: 2%; background: linear-gradient(90deg, transparent, #ff0050, transparent); transform: rotate(-12deg); position: absolute; border-radius: 999px;"></div>
-                      <div style="top: 48%; left: 16%; width: 68%; height: 2%; background: linear-gradient(90deg, transparent, #ff0050, transparent); transform: rotate(18deg); position: absolute; border-radius: 999px;"></div>
+                    <div
+                      class="hashira-visual"
+                      style="inset: auto -5% -10% auto; width: 72%"
+                    >
+                      <div
+                        style="
+                          inset: 6% 6% 6% 6%;
+                          border: 1px solid rgba(255, 0, 50, 0.28);
+                          position: absolute;
+                          border-radius: 999px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          inset: 22% 22% 10% 28%;
+                          background: linear-gradient(180deg, #1f0206, #000000);
+                          clip-path: polygon(
+                            50% 0%,
+                            80% 30%,
+                            85% 100%,
+                            15% 100%,
+                            20% 30%
+                          );
+                          position: absolute;
+                          border-radius: 999px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          top: 14%;
+                          left: 45%;
+                          width: 14%;
+                          height: 14%;
+                          background: radial-gradient(
+                            circle,
+                            #ff0032,
+                            #100002 75%
+                          );
+                          box-shadow: 0 0 16px rgba(255, 0, 50, 0.6);
+                          position: absolute;
+                          border-radius: 999px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          top: 36%;
+                          left: 22%;
+                          width: 56%;
+                          height: 2%;
+                          background: linear-gradient(
+                            90deg,
+                            transparent,
+                            #ff0050,
+                            transparent
+                          );
+                          transform: rotate(-12deg);
+                          position: absolute;
+                          border-radius: 999px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          top: 48%;
+                          left: 16%;
+                          width: 68%;
+                          height: 2%;
+                          background: linear-gradient(
+                            90deg,
+                            transparent,
+                            #ff0050,
+                            transparent
+                          );
+                          transform: rotate(18deg);
+                          position: absolute;
+                          border-radius: 999px;
+                        "
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -4271,8 +4884,6 @@
         </div>
       </section>
 
-
-
       <section
         class="section remaining-cast-section"
         id="cast"
@@ -4284,10 +4895,13 @@
           <div class="section-heading-block">
             <p class="eyebrow">Extended Archive</p>
             <h2 class="section-title">
-              <span class="section-entry-line"><span>Remaining Cast</span></span>
+              <span class="section-entry-line"
+                ><span>Remaining Cast</span></span
+              >
             </h2>
             <p class="section-copy">
-              Explore key allies, apprentices, and upper-rank demons that shape the final battlefield.
+              Explore key allies, apprentices, and upper-rank demons that shape
+              the final battlefield.
             </p>
           </div>
 
@@ -4303,7 +4917,9 @@
                 <span class="cast-faction">Ally</span>
               </div>
               <p class="cast-desc">
-                Apprentice of the Butterfly Estate. Uses flower breathing to unleash quick, visual sword thrusts, showing absolute sight and prediction in combat.
+                Apprentice of the Butterfly Estate. Uses flower breathing to
+                unleash quick, visual sword thrusts, showing absolute sight and
+                prediction in combat.
               </p>
               <div class="cast-stats">
                 <div class="cast-stat">
@@ -4328,7 +4944,9 @@
                 <span class="cast-faction">Ally</span>
               </div>
               <p class="cast-desc">
-                Wind Hashira's brother. Fights with a Nichirin shotgun and flesh consumption, absorbing demonic properties to temporarily gain demon abilities.
+                Wind Hashira's brother. Fights with a Nichirin shotgun and flesh
+                consumption, absorbing demonic properties to temporarily gain
+                demon abilities.
               </p>
               <div class="cast-stats">
                 <div class="cast-stat">
@@ -4353,7 +4971,9 @@
                 <span class="cast-faction">Demon</span>
               </div>
               <p class="cast-desc">
-                Upper Rank One. Former Demon Slayer who uses Moon Breathing. Wields a fleshy katana lined with eyes, creating chaotic crescent blades of light.
+                Upper Rank One. Former Demon Slayer who uses Moon Breathing.
+                Wields a fleshy katana lined with eyes, creating chaotic
+                crescent blades of light.
               </p>
               <div class="cast-stats">
                 <div class="cast-stat">
@@ -4378,7 +4998,8 @@
                 <span class="cast-faction">Demon</span>
               </div>
               <p class="cast-desc">
-                Upper Rank Three. Fights with martial arts, utilizing compass needle shockwaves and rapid fist bursts to defeat slayers.
+                Upper Rank Three. Fights with martial arts, utilizing compass
+                needle shockwaves and rapid fist bursts to defeat slayers.
               </p>
               <div class="cast-stats">
                 <div class="cast-stat">
@@ -4500,7 +5121,7 @@
           this.slashes = [];
           this.flashOpacity = 0;
           this.screenShake = 0;
-          
+
           if (this.animationFrame) {
             cancelAnimationFrame(this.animationFrame);
           }
@@ -4913,11 +5534,11 @@
 
             this.ctx.beginPath();
             this.ctx.moveTo(slash.points[0].x, slash.points[0].y);
-            
+
             for (let i = 1; i < pointsToDraw; i++) {
               this.ctx.lineTo(slash.points[i].x, slash.points[i].y);
             }
-            
+
             if (pointsToDraw < slash.points.length) {
               const lastPt = slash.points[pointsToDraw - 1];
               const nextPt = slash.points[pointsToDraw];
@@ -4984,7 +5605,7 @@
           }
         }
       }
-      
+
       const loadingScreen = document.getElementById("loading-screen");
       const loaderProgressBar = document.getElementById("loader-progress-bar");
       const loaderProgressLabel = document.getElementById(
@@ -5007,7 +5628,7 @@
           ".magnetic, .nav-action, .theme-btn, .replay-btn",
         ),
       ];
-      
+
       const slides = [...document.querySelectorAll(".hero-slide")];
       let currentSlideIndex = 0;
       let slashAnimator;
@@ -5176,7 +5797,7 @@
             const rect = slide.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
-            
+
             // Smoothly animate image tilting towards cursor
             gsap.to(img, {
               rotateY: x * 20,
@@ -5186,7 +5807,7 @@
               ease: "power2.out",
               overwrite: "auto"
             });
-            
+
             // Smoothly animate glow plate slightly away from cursor for depth separation
             if (plate) {
               gsap.to(plate, {
@@ -5227,11 +5848,49 @@
         }
       });
 
+      // Slash trigger on hover for Hero slides
+      slides.forEach(slide => {
+        slide.addEventListener("pointerenter", () => {
+          if (!prefersReduced && slashAnimator) {
+            const charName = slide.dataset.character;
+            let style = "water";
+            if (charName === "nezuko") style = "bloom";
+            else if (charName === "zenitsu") style = "thunder";
+            else if (charName === "inosuke") style = "beast";
+            slashAnimator.trigger(style);
+          }
+        });
+      });
+
+      // Slash trigger on hover for Hashira slides
+      const hashiraSlidesList = document.querySelectorAll(".hashira-slide");
+      hashiraSlidesList.forEach(slide => {
+        slide.addEventListener("pointerenter", () => {
+          if (!prefersReduced && hashiraSlashAnimator) {
+            const charName = slide.dataset.character;
+            let style = "water";
+            if (charName === "rengoku") style = "flame";
+            else if (charName === "tengen") style = "sound";
+            else if (charName === "shinobu") style = "insect";
+            else if (charName === "muichiro") style = "mist";
+            else if (charName === "mitsuri") style = "love";
+            else if (charName === "gyomei") style = "stone";
+            else if (charName === "obanai") style = "serpent";
+            else if (charName === "sanemi") style = "wind";
+            else if (charName === "akaza") style = "compass";
+            else if (charName === "kokushibo") style = "moon";
+            else if (charName === "douma") style = "ice";
+            else if (charName === "muzan") style = "muzan";
+            hashiraSlashAnimator.trigger(style);
+          }
+        });
+      });
+
       function playSlideEntrance(idx) {
         if (prefersReduced) return;
         const s = slides[idx];
         if (!s) return;
-        
+
         const eyebrow = s.querySelector(".eyebrow");
         const title = s.querySelector(".slide-title");
         const desc = s.querySelector(".slide-desc");
@@ -5240,51 +5899,51 @@
         const img = s.querySelector(".slide-image");
         const plate = s.querySelector(".slide-glow-plate");
         const textCard = s.querySelector(".slide-text");
-        
+
         // Reset styles first so they don't block layout calculation
         gsap.killTweensOf([eyebrow, title, desc, tags, stats, img, plate, textCard]);
-        
+
         // Stagger entrance timeline
         const tl = gsap.timeline();
-        
+
         tl.fromTo(textCard,
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
         );
-        
+
         if (eyebrow) {
-          tl.fromTo(eyebrow, 
+          tl.fromTo(eyebrow,
             { y: 15, clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)" },
             { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", duration: 0.6, ease: "power3.out" },
             "-=0.6"
           );
         }
-        
-        tl.fromTo(title, 
+
+        tl.fromTo(title,
           { y: 20, clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)" },
           { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", duration: 0.7, ease: "power3.out" },
           "-=0.5"
         );
-        
-        tl.fromTo(desc, 
+
+        tl.fromTo(desc,
           { y: 15, clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)" },
           { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", duration: 0.7, ease: "power3.out" },
           "-=0.4"
         );
-        
-        tl.fromTo(tags, 
+
+        tl.fromTo(tags,
           { y: 10, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power2.out" },
           "-=0.4"
         );
-        
-        tl.fromTo(stats, 
+
+        tl.fromTo(stats,
           { y: 15, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out" },
           "-=0.3"
         );
-        
-        gsap.fromTo(img, 
+
+        gsap.fromTo(img,
           { scale: 0.82, x: 50, opacity: 0 },
           { scale: 1, x: 0, opacity: 1, duration: 1.0, ease: "power4.out", delay: 0.15 }
         );
@@ -5299,21 +5958,21 @@
 
       function changeSlide(idx) {
         if (idx === currentSlideIndex) return;
-        
+
         const oldSlide = slides[currentSlideIndex];
         const newSlide = slides[idx];
-        
+
         const charName = newSlide.dataset.character;
         let slashStyle = "water";
         if (charName === "tanjiro") slashStyle = "water";
         else if (charName === "nezuko") slashStyle = "bloom";
         else if (charName === "zenitsu") slashStyle = "thunder";
         else if (charName === "inosuke") slashStyle = "beast";
-        
+
         if (!prefersReduced && slashAnimator) {
           slashAnimator.trigger(slashStyle);
         }
-        
+
         slides.forEach((s, sIdx) => {
           if (sIdx === idx) {
             s.classList.add("active");
@@ -5327,7 +5986,7 @@
             s.classList.remove("active");
           }
         });
-        
+
         currentSlideIndex = idx;
       }
 
@@ -5357,7 +6016,7 @@
                   else if (p < 0.50) targetIdx = 1;
                   else if (p < 0.75) targetIdx = 2;
                   else targetIdx = 3;
-                  
+
                   if (targetIdx !== currentSlideIndex) {
                     changeSlide(targetIdx);
                   }
@@ -5370,7 +6029,7 @@
 
       function initMobileScrollTrigger() {
         if (prefersReduced) return;
-        
+
         ScrollTrigger.matchMedia({
           "(max-width: 1024px)": function() {
             slides.forEach((slide, idx) => {
@@ -5385,10 +6044,10 @@
                   else if (charName === "nezuko") slashStyle = "bloom";
                   else if (charName === "zenitsu") slashStyle = "thunder";
                   else if (charName === "inosuke") slashStyle = "beast";
-                  
+
                   if (slashAnimator) slashAnimator.trigger(slashStyle);
                   playSlideEntrance(idx);
-                  
+
                   updateSceneTheme(document.getElementById("heroes"));
                   if (charName === "tanjiro") flashMemory("tanjiro", 500);
                   if (charName === "nezuko") flashMemory("nezuko", 460);
@@ -6042,12 +6701,17 @@
         } else if (charName === "douma") {
           tl.fromTo(textCard,
             { scale: 0.85, opacity: 0, filter: "blur(8px)" },
-            { scale: 1, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "power2.out" }
+                    { scale: 1, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "power2.out" }
           );
         } else if (charName === "muzan") {
           tl.fromTo(textCard,
             { scale: 1.15, opacity: 0 },
             { scale: 1, opacity: 1, duration: 0.6, ease: "power4.out" }
+          );
+        } else if (charName === "obanai") {
+          tl.fromTo(textCard,
+            { y: 40, opacity: 0, rotateZ: 5 },
+            { y: 0, opacity: 1, rotateZ: 0, duration: 1.1, ease: "power3.out" }
           );
         } else {
           tl.fromTo(textCard,
@@ -6120,6 +6784,11 @@
               { scale: 1.3, opacity: 0, rotateX: 10 },
               { scale: 1, opacity: 1, rotateX: 0, duration: 0.8, ease: "power4.out", delay: 0.05 }
             );
+          } else if (charName === "obanai") {
+            gsap.fromTo(visualCard,
+              { scale: 0.9, opacity: 0, y: -40 },
+              { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: "back.out(1.1)", delay: 0.1 }
+            );
           } else {
             gsap.fromTo(visualCard,
               { scale: 0.82, x: 40, opacity: 0 },
@@ -6159,6 +6828,11 @@
               { scale: 1.3, opacity: 0, y: -40 },
               { scale: 1, opacity: 1, y: 0, duration: 0.9, ease: "power4.out", delay: 0.1 }
             );
+          } else if (charName === "obanai") {
+            gsap.fromTo(img,
+              { scale: 0.85, opacity: 0, filter: "hue-rotate(90deg) contrast(1.2)" },
+              { scale: 1, opacity: 1, filter: "hue-rotate(0deg) contrast(1)", duration: 1.4, ease: "power2.out", delay: 0.15 }
+            );
           } else {
             gsap.fromTo(img,
               { scale: 0.8, x: 60, opacity: 0 },
@@ -6168,8 +6842,8 @@
         }
 
         if (plate) {
-          const plateDuration = (charName === "rengoku") ? 0.8 : (charName === "muzan") ? 0.7 : 1.2;
-          const plateScale = (charName === "rengoku") ? 0.5 : (charName === "akaza") ? 1.1 : 0.75;
+          const plateDuration = (charName === "rengoku") ? 0.8 : (charName === "muzan") ? 0.7 : (charName === "obanai") ? 1.4 : 1.2;
+          const plateScale = (charName === "rengoku") ? 0.5 : (charName === "akaza") ? 1.1 : (charName === "obanai") ? 0.85 : 0.75;
           gsap.fromTo(plate,
             { scale: plateScale, opacity: 0 },
             { scale: 1, opacity: 0.55, duration: plateDuration, ease: "power3.out", delay: 0.1 }
@@ -6207,7 +6881,7 @@
           if (sIdx === idx) {
             s.classList.add("active");
             playHashiraSlideEntrance(idx);
-            
+
             // Adjust ambient background wash based on theme
             let washA = "rgba(176, 131, 255, 0.08)";
             let washB = "rgba(255, 173, 72, 0.07)";
@@ -6224,7 +6898,7 @@
             else if (charName === "kokushibo") { washA = "rgba(160, 100, 255, 0.14)"; washB = "rgba(255, 200, 60, 0.05)"; }
             else if (charName === "douma") { washA = "rgba(100, 220, 240, 0.12)"; washB = "rgba(200, 240, 255, 0.06)"; }
             else if (charName === "muzan") { washA = "rgba(255, 0, 50, 0.15)"; washB = "rgba(10, 0, 2, 0.1)"; }
-            
+
             document.documentElement.style.setProperty("--bg-wash-a", washA);
             document.documentElement.style.setProperty("--bg-wash-b", washB);
           } else {
@@ -6307,13 +6981,13 @@
         const card = slide.querySelector(".hashira-card-scaled");
         const img = slide.querySelector(".slide-image");
         const plate = slide.querySelector(".slide-glow-plate");
-        
+
         slide.addEventListener("pointermove", (e) => {
           if (prefersReduced) return;
           const rect = slide.getBoundingClientRect();
           const x = (e.clientX - rect.left) / rect.width - 0.5;
           const y = (e.clientY - rect.top) / rect.height - 0.5;
-          
+
           if (card) {
             gsap.to(card, {
               rotateY: x * 15,
@@ -6337,7 +7011,7 @@
               overwrite: "auto"
             });
           }
-          
+
           if (plate) {
             gsap.to(plate, {
               rotateY: -x * 10,
@@ -6396,7 +7070,7 @@
       // Initialize slash animator & scroll triggers
       slashAnimator = new SlashAnimator("slash-canvas");
       hashiraSlashAnimator = new SlashAnimator("hashira-slash-canvas");
-      
+
       initScrollShowcase();
       initMobileScrollTrigger();
       initHashiraScrollShowcase();
@@ -6421,37 +7095,36 @@
         }
       });
 
-      // Premium Audio Engine with Mute/Unmute toggle
-      (function() {
-        const audioUrl = "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Final%20Battle%20of%20the%20Dark%20Wizards.mp3";
+      document.addEventListener("DOMContentLoaded", () => {
+        // Epic battle audio for Infinity Castle vibe
+        const audioUrl = "https://cdn.pixabay.com/download/audio/2022/01/21/audio_31743c58bb.mp3?filename=epic-battle-112906.mp3";
         const bgAudio = new Audio(audioUrl);
         bgAudio.loop = true;
-        bgAudio.volume = 0.35;
-        
+        bgAudio.volume = 0.45;
+
         const audioIndicator = document.querySelector(".audio-indicator");
         const audioLabel = audioIndicator.querySelector("span:not(.audio-dot)");
-        
-        let isPlaying = false;
-        
+        let hasUserInteracted = false;
+
         audioIndicator.addEventListener("click", () => {
-          if (!isPlaying) {
+          if (bgAudio.paused) {
             bgAudio.play()
               .then(() => {
-                isPlaying = true;
+                hasUserInteracted = true;
                 audioIndicator.classList.add("playing");
-                audioLabel.textContent = "Audio ready · live";
+                audioLabel.textContent = "Infinity Castle Audio — Live";
               })
-              .catch(err => {
+              .catch((err) => {
                 console.error("Audio playback blocked or failed:", err);
               });
           } else {
             bgAudio.pause();
-            isPlaying = false;
+            hasUserInteracted = true;
             audioIndicator.classList.remove("playing");
-            audioLabel.textContent = "Audio ready · muted";
+            audioLabel.textContent = "Infinity Castle Audio — Muted";
           }
         });
-      })();
+      });
     </script>
   </body>
 </html>
